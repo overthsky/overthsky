@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UNKWON</title>
+    <link rel="stylesheet" href="arg.css">
+
+</head>
+
+<body>
+
+    <main > 
+
+<div class="content">      
+<form id="meuFormulario" onsubmit="return validarFormulario()"   >
+    <label for="codigoNumerico">Digite o código numérico:</label>
+    <input type="text" id="codigoNumerico" name="codigoNumerico" required>
+    <span id="erroCodigo" class="error"></span>
+    <button type="submit" > -> </button>
+  </form>
+</div> 
+    </main>
+
+    <script>
+        function validarFormulario() {
+          // Obtém o valor do campo de código numérico
+          var codigoDigitado = document.getElementById('codigoNumerico').value;
+    
+          // Código numérico desejado
+          var codigoDesejado = "856197";  // Substitua pelo seu código específico
+    
+          // Verifica se o código digitado corresponde ao código desejado
+          if (codigoDigitado !== codigoDesejado) {
+            document.getElementById('erroCodigo').innerHTML = "Código incorreto.";
+            return false; // Impede o envio do formulário
+          }
+    
+          // Limpa a mensagem de erro se o código estiver correto
+          document.getElementById('erroCodigo').innerHTML = "";
+    
+          // Redireciona para a página desejada
+          window.location.href = "pag2.html";
+    
+          return false; // Impede o envio do formulário (opcional, dependendo do seu caso)
+        }
+      </script>
+
+</body>
+</html>
